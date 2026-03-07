@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — FurBuddy</title>
+  <meta name="description" content="Built for every pet. Vaccine tracker, medication manager, health timeline, and multi-pet dashboard." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header class="navbar" id="navbar" role="banner">
+    <a href="index.html" class="nav-brand" aria-label="FurBuddy home">
+      <img src="images/Untitled design-2.png" alt="FurBuddy" class="nav-logo" />
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="pricing.html#download" class="btn btn-primary nav-cta">Download App</a>
+    <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+  <div class="nav-drawer" id="nav-drawer" role="dialog" aria-label="Mobile menu">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="pricing.html#download" class="btn btn-primary">Download App</a>
+  </div>
+
+  <main id="main-content">
+    <section class="hero hero-photo-wrap hero-features" aria-labelledby="hero-heading">
+      <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1920&q=80" alt="Veterinary care and pet health" class="hero-photo" />
+      <div class="hero-bg"></div>
+      <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 id="hero-heading">Built for Every Pet. Loved by Every Owner.</h1>
+        <p class="subheadline">Vaccine tracker, medication reminders, health timeline & multi-pet dashboard — all in one app.</p>
+        <div class="hero-ctas">
+          <a href="pricing.html#download" class="btn btn-primary">Download Free</a>
+          <a href="#feature-blocks" class="btn btn-ghost">See features</a>
+        </div>
+      </div>
+      <div class="phone-mockup-wrap" aria-hidden="true">
+        <div class="phone-mockup">
+          <div class="screen">
+            <div class="mock-status">9:41<span>● ● ●</span></div>
+            <div class="mock-nav"><span class="dot"></span> Vaccines</div>
+            <div class="mock-body">
+              <div class="mock-cal">
+                <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span class="weekend">S</span><span class="weekend">S</span>
+                <span>1</span><span>2</span><span>3</span><span class="today">4</span><span>5</span><span>6</span><span>7</span>
+              </div>
+              <div class="mock-card"><strong>Rabies</strong> — Due Mar 4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="feature-blocks">
+      <div class="container">
+        <h2 class="section-title">Everything your pet needs</h2>
+        <p class="section-subtitle">Four ways FurBuddy keeps your furry family healthy and on schedule.</p>
+        <div class="feature-cards-wide">
+          <article class="feature-card-wide">
+            <div class="feature-card-wide-icon" aria-hidden="true">💉</div>
+            <div class="feature-card-wide-content">
+              <h3>Vaccine Tracker</h3>
+              <p>Calendar view with upcoming and past vaccinations. Never miss a booster with smart reminders. Vet-shareable PDF export and full shot history.</p>
+            </div>
+          </article>
+          <article class="feature-card-wide">
+            <div class="feature-card-wide-icon" aria-hidden="true">💊</div>
+            <div class="feature-card-wide-content">
+              <h3>Medication Manager</h3>
+              <p>Recurring reminders for daily or weekly meds, refill tracker, and photo log. Snooze and custom times for each dose.</p>
+            </div>
+          </article>
+          <article class="feature-card-wide">
+            <div class="feature-card-wide-icon" aria-hidden="true">📋</div>
+            <div class="feature-card-wide-content">
+              <h3>Health Timeline</h3>
+              <p>Scrollable full history from first visit to today. Filter by pet, type, and date. Search and export for vet visits.</p>
+            </div>
+          </article>
+          <article class="feature-card-wide">
+            <div class="feature-card-wide-icon" aria-hidden="true">🐶</div>
+            <div class="feature-card-wide-content">
+              <h3>Multi-Pet Dashboard</h3>
+              <p>Overview cards for each pet at a glance. Quick-add button, switch between pets in one tap. Dogs, cats, rabbits — all in one place.</p>
+            </div>
+          </article>
+        </div>
+        <div class="cta-strip">
+          <p>See it in action — Download FurBuddy Free</p>
+          <a href="pricing.html#download" class="btn btn-primary">Download Free</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="images/Untitled design-2.png" alt="FurBuddy" class="footer-logo" />
+        </div>
+        <p class="footer-tagline">Your pet's health, always in your pocket.</p>
+        <div class="footer-badges">
+          <a href="#">App Store</a>
+          <a href="#">Google Play</a>
+        </div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="#">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <div class="social-buttons">
+          <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2a1 1 0 0 1 .993 .883l.007 .117v4a1 1 0 0 1 -.883 .993l-.117 .007h-3v1h3a1 1 0 0 1 .991 1.131l-.02 .112l-1 4a1 1 0 0 1 -.858 .75l-.112 .009h-2v6a1 1 0 0 1 -1.993 .117l-.007 -.117v-6h-2a1 1 0 0 1 -.993 -.883l-.007 -.117v-4a1 1 0 0 1 .883 -.993l.117 -.007h2v-1a6 6 0 0 1 5.775 -5.996l.225 -.004h3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FurBuddy. Made with ❤️ for pet parents.
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <p>We use cookies to improve your experience and analyze site traffic. By continuing, you accept our use of cookies.</p>
+    <button type="button" class="btn" id="cookie-accept" aria-label="Accept cookies">Accept</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
