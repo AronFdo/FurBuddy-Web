@@ -315,15 +315,22 @@ img {
 .problem-solution {
   background: linear-gradient(180deg, rgba(45, 106, 79, 0.05) 0%, var(--bg) 100%);
 }
-.problem-intro {
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--text);
-  line-height: 1.6;
-  max-width: 560px;
+.pain-point-bar {
+  max-width: 720px;
   margin: 0 auto 2rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(244, 162, 97, 0.12);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--accent);
 }
-.problem-solution .container {
+.pain-point-text {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.5;
+  text-align: center;
+}
+.problem-solution-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
@@ -331,7 +338,7 @@ img {
   margin: 0 auto;
 }
 @media (min-width: 768px) {
-  .problem-solution .container {
+  .problem-solution-grid {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: start;
@@ -406,18 +413,18 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 6rem 1.5rem 4rem;
+  padding: 5rem 1.5rem 3rem;
   position: relative;
   overflow: hidden;
 }
 @media (min-width: 1024px) {
   .hero {
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 2rem 3rem;
-    padding: 5rem 2rem 4rem;
+    gap: 3rem;
+    padding: 4rem 2rem 3rem;
   }
 }
 .hero-bg {
@@ -454,27 +461,17 @@ img {
   50% { transform: translate(20px, -20px) scale(1.05); }
 }
 
-.hero-pain {
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 700px;
+  max-width: 540px;
 }
 @media (min-width: 1024px) {
   .hero-content {
-    max-width: 480px;
+    max-width: 420px;
     text-align: left;
-    flex: 0 1 auto;
-  }
-  .hero .hero-pain {
-    text-align: left;
+    flex: 0 0 auto;
   }
   .hero .hero-ctas {
     justify-content: flex-start;
@@ -484,25 +481,26 @@ img {
   }
 }
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  margin-bottom: 1rem;
+  font-size: clamp(1.85rem, 4.5vw, 2.75rem);
+  margin-bottom: 0.75rem;
   color: var(--text);
+  line-height: 1.2;
 }
 .hero .subheadline {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
   color: var(--muted);
-  margin-bottom: 2rem;
-  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 .hero-ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 .hero-trust {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--muted);
   display: flex;
   flex-wrap: wrap;
