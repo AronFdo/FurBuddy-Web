@@ -1,11 +1,10 @@
 /**
- * FurBuddy — Global JS: Navbar, mobile menu, scroll, cookie banner, FAQ
+ * FurBuddy — Global JS: Navbar, mobile menu, scroll animations, cookie banner, FAQ
  */
 
 (function () {
   'use strict';
 
-  // ——— Navbar scroll shadow ———
   var navbar = document.getElementById('navbar');
   if (navbar) {
     function onScroll() {
@@ -15,7 +14,6 @@
     onScroll();
   }
 
-  // ——— Mobile menu (hamburger + drawer) ———
   var hamburger = document.getElementById('hamburger');
   var drawer = document.getElementById('nav-drawer');
   var overlay = document.getElementById('drawer-overlay');
@@ -48,25 +46,16 @@
 
   if (hamburger) {
     hamburger.addEventListener('click', function () {
-      if (drawer && drawer.classList.contains('open')) {
-        closeDrawer();
-      } else {
-        openDrawer();
-      }
+      drawer && drawer.classList.contains('open') ? closeDrawer() : openDrawer();
     });
   }
-
-  if (overlay) {
-    overlay.addEventListener('click', closeDrawer);
-  }
-
+  if (overlay) overlay.addEventListener('click', closeDrawer);
   if (drawer) {
     drawer.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', closeDrawer);
     });
   }
 
-  // ——— Smooth scroll for anchor links (e.g. "See How It Works") ———
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       var id = this.getAttribute('href');
@@ -79,52 +68,38 @@
     });
   });
 
-  // ——— Cookie banner ———
+  // Cookie banner
   var cookieBanner = document.getElementById('cookie-banner');
   var cookieAccept = document.getElementById('cookie-accept');
   var cookieKey = 'furbuddy_cookie_consent';
 
-  function hideCookieBanner() {
-    if (cookieBanner) {
-      cookieBanner.classList.remove('show');
-    }
-  }
-
   if (cookieAccept) {
     cookieAccept.addEventListener('click', function () {
-      try {
-        localStorage.setItem(cookieKey, 'accepted');
-      } catch (e) {}
-      hideCookieBanner();
+      try { localStorage.setItem(cookieKey, 'accepted'); } catch (e) {}
+      if (cookieBanner) cookieBanner.classList.remove('show');
     });
   }
-
   if (cookieBanner) {
     try {
-      if (localStorage.getItem(cookieKey) === 'accepted') {
-        hideCookieBanner();
-      } else {
-        cookieBanner.classList.add('show');
-      }
+      if (localStorage.getItem(cookieKey) !== 'accepted') cookieBanner.classList.add('show');
     } catch (e) {
       cookieBanner.classList.add('show');
     }
   }
 
-  // ——— FAQ accordion (pricing page) ———
+  // FAQ accordion
   document.querySelectorAll('.faq-item').forEach(function (item) {
     var btn = item.querySelector('button');
     var content = item.querySelector('.content');
     if (!btn || !content) return;
-
     btn.addEventListener('click', function () {
       var isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(function (other) {
         other.classList.remove('open');
-        var otherBtn = other.querySelector('button');
-        var otherContent = other.querySelector('.content');
-        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-        if (otherContent) otherContent.style.maxHeight = '';
+        var ob = other.querySelector('button');
+        var oc = other.querySelector('.content');
+        if (ob) ob.setAttribute('aria-expanded', 'false');
+        if (oc) oc.style.maxHeight = '';
       });
       if (!isOpen) {
         item.classList.add('open');
@@ -133,4 +108,18 @@
       }
     });
   });
+
+  // Scroll-in animations
+  var fadeEls = document.querySelectorAll('.fade-in');
+  if (fadeEls.length && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    fadeEls.forEach(function (el) { observer.observe(el); });
+  }
 })();
