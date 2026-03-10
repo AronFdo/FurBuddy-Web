@@ -1074,6 +1074,8 @@ img { max-width: 100%; height: auto; display: block; }
   margin-top: 2rem;
 }
 .cta-strip p { margin-bottom: 1rem; font-size: 1.1rem; }
+.cta-strip p a { color: var(--primary); font-weight: 600; text-underline-offset: 2px; }
+.cta-strip p a:hover { text-decoration: underline; }
 
 /* ========== FOOTER ========== */
 .footer {
