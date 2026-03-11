@@ -1,10 +1,27 @@
 /**
  * FurBuddy — Contact form: validation, loading state, success message
+ * Email signup: submits to Google Forms (target=iframe), then shows success message
  */
 
 (function () {
   'use strict';
 
+  // ----- Email collector (Google Forms) -----
+  var emailSignupForm = document.getElementById('email-signup-form');
+  var emailSignupSuccess = document.getElementById('email-signup-success');
+  var emailCollectorSection = emailSignupForm && emailSignupForm.closest('.email-collector');
+
+  if (emailSignupForm && emailSignupSuccess && emailCollectorSection) {
+    emailSignupForm.addEventListener('submit', function () {
+      // Form POSTs to Google Forms in target iframe; show success after a short delay
+      setTimeout(function () {
+        emailSignupSuccess.hidden = false;
+        emailCollectorSection.classList.add('form-submitted');
+      }, 800);
+    });
+  }
+
+  // ----- Main contact form -----
   var form = document.getElementById('contact-form');
   var wrap = document.getElementById('contact-form-wrap');
   var successEl = document.getElementById('success-message');

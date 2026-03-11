@@ -770,6 +770,76 @@ img { max-width: 100%; height: auto; display: block; }
   color: white;
 }
 
+/* ========== EMAIL COLLECTOR (Contact page – Google Forms) ========== */
+.email-collector {
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, rgba(45, 106, 79, 0.08) 0%, rgba(116, 198, 157, 0.06) 100%);
+  border-bottom: 1px solid rgba(45, 106, 79, 0.12);
+}
+.email-collector-inner {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+.email-collector h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+.email-collector-text {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+.email-signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: stretch;
+}
+.email-signup-form input[type="email"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: var(--white);
+  transition: border-color var(--transition);
+}
+.email-signup-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.12);
+}
+.email-signup-form .btn { flex-shrink: 0; }
+.email-signup-success {
+  padding: 0.75rem 1rem;
+  background: rgba(116, 198, 157, 0.15);
+  border: 1px solid rgba(116, 198, 157, 0.3);
+  border-radius: var(--radius);
+  color: var(--primary-dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.email-collector.form-submitted .email-signup-form { display: none; }
+.email-collector.form-submitted .email-signup-success { display: block !important; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.google-form-iframe { position: absolute; width: 0; height: 0; border: none; }
+
 .pricing-toggle-wrap {
   display: flex;
   align-items: center;
